@@ -45,6 +45,7 @@
     <!-- 依赖声明 -->
     <dependencyManagement>
         <dependencies>
+            <!--horizon...-->
             <dependency>
                 <groupId>org.redcarp</groupId>
                 <artifactId>horizon-infrastructure</artifactId>
