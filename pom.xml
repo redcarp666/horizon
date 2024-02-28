@@ -174,12 +174,6 @@
                 <artifactId>poi</artifactId>
                 <version>${apache.poi.version}</version>
             </dependency>
-            <!-- ip2region -->
-            <dependency>
-                <groupId>org.lionsoul</groupId>
-                <artifactId>ip2region</artifactId>
-                <version>${ip2region.version}</version>
-            </dependency>
 
         </dependencies>
     </dependencyManagement>
