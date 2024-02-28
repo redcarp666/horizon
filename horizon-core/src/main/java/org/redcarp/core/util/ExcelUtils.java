@@ -21,6 +21,7 @@ import java.util.stream.Stream;
 public class ExcelUtils {
 
 	public static Object parseCellValue(Cell cell) {
+
 		if (cell == null) {
 			return null;
 		}
