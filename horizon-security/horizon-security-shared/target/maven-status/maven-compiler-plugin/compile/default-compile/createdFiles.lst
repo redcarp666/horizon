@@ -1,4 +1,0 @@
-org/redcarp/common/security/shared/handler/SecurityExceptionHandler.class
-org/redcarp/common/security/shared/auth/LoginUsernamePassword.class
-org/redcarp/common/security/shared/configuration/PasswordEncoderService$PasswordEncoderHolder.class
-org/redcarp/common/security/shared/configuration/PasswordEncoderService.class
