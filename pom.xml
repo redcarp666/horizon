@@ -37,7 +37,6 @@
         <hutool.version>5.8.25</hutool.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <mysql.version>8.0.27</mysql.version>
-        <ip2region.version>2.7.0</ip2region.version>
         <apache.poi.version>4.1.2</apache.poi.version>
         <commons.beanutils.version>1.9.4</commons.beanutils.version>
         <fastjson2.version>2.0.46</fastjson2.version>
