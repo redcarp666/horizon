@@ -1,10 +1,10 @@
-package org.redcarp.common.security.jwt;
+package org.redcarp.security.jwt;
 
 import cn.hutool.extra.spring.SpringUtil;
 import org.redcarp.common.base.utils.PreconditionUtils;
-import org.redcarp.common.security.jwt.handler.CurrentUserHolder;
-import org.redcarp.common.security.shared.auth.LoginUsernamePassword;
-import org.redcarp.common.security.shared.configuration.PasswordEncoderService;
+import org.redcarp.security.jwt.handler.CurrentUserHolder;
+import org.redcarp.security.shared.auth.LoginUsernamePassword;
+import org.redcarp.security.shared.configuration.PasswordEncoderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;

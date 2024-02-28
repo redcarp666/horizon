@@ -1,4 +1,4 @@
-package org.redcarp.common.security.shared.configuration;
+package org.redcarp.security.shared.configuration;
 
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;

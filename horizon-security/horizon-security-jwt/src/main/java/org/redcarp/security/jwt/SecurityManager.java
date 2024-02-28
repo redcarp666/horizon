@@ -1,6 +1,6 @@
-package org.redcarp.common.security.jwt;
+package org.redcarp.security.jwt;
 
-import org.redcarp.common.security.shared.auth.LoginUsernamePassword;
+import org.redcarp.security.shared.auth.LoginUsernamePassword;
 import org.springframework.security.oauth2.jwt.Jwt;
 
 /**

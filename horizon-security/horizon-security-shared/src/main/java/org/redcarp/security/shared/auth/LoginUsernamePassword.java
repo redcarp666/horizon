@@ -1,4 +1,4 @@
-package org.redcarp.common.security.shared.auth;
+package org.redcarp.security.shared.auth;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 

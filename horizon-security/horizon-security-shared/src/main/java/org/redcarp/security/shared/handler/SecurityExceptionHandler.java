@@ -1,4 +1,4 @@
-package org.redcarp.common.security.shared.handler;
+package org.redcarp.security.shared.handler;
 
 import org.redcarp.common.base.domain.Response;
 import org.springframework.http.HttpStatus;

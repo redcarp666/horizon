@@ -1,4 +1,4 @@
-package org.redcarp.common.security.jwt.exception;
+package org.redcarp.security.jwt.exception;
 
 import org.redcarp.core.exception.HorizonRuntimeException;
 

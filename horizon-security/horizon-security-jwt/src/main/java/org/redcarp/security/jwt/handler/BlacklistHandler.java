@@ -1,4 +1,4 @@
-package org.redcarp.common.security.jwt.handler;
+package org.redcarp.security.jwt.handler;
 
 import cn.hutool.core.date.DateUtil;
 import org.redcarp.component.redis.RedisService;

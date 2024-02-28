@@ -1,6 +1,6 @@
-package org.redcarp.common.security.jwt.config;
+package org.redcarp.security.jwt.config;
 
-import org.redcarp.common.security.jwt.filter.BlacklistFilter;
+import org.redcarp.security.jwt.filter.BlacklistFilter;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

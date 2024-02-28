@@ -1,4 +1,4 @@
-package org.redcarp.common.security.jwt.token;
+package org.redcarp.security.jwt.token;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
