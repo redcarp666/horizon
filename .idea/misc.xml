@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="GoogleJavaFormatSettings">
+    <option name="enabled" value="true" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-base/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-file/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-security/inspur-boat-common-security-jwt/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-security/inspur-boat-common-security-shared/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-security/inspur-boat-common-security-token/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-component/inspur-boat-common-security/pom.xml" />
+        <option value="$PROJECT_DIR$/horizon-module/inspur-boat-module-test/pom.xml" />
+        <option value="$PROJECT_DIR$/inspur-boat-module/inspur-boat-module-authentication/pom.xml" />
+        <option value="$PROJECT_DIR$/inspur-boat-module/inspur-boat-module-file/pom.xml" />
+        <option value="$PROJECT_DIR$/inspur-boat-module/inspur-boat-module-gen/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

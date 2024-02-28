@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="horizon-api-client" />
+        <module name="horizon-security-shared" />
+        <module name="horizon-core" />
+        <module name="horizon-component-jms" />
+        <module name="horizon-infrastructure" />
+        <module name="horizon-component-mongodb" />
+        <module name="horizon-component-redis" />
+        <module name="horizon-security-jwt" />
+        <module name="horizon-component-swagger" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="horizon-demo" target="1.8" />
+      <module name="horizon-demo-system" target="1.8" />
+      <module name="inspur-boat-common-base" target="1.8" />
+      <module name="inspur-boat-common-file" target="1.8" />
+      <module name="inspur-boat-common-security" target="1.8" />
+      <module name="inspur-boat-common-security-jwt" target="1.8" />
+      <module name="inspur-boat-common-security-shared" target="1.8" />
+      <module name="inspur-boat-common-security-token" target="1.8" />
+      <module name="inspur-boat-module-authentication" target="1.8" />
+      <module name="inspur-boat-module-file" target="1.8" />
+      <module name="inspur-boat-module-gen" target="1.8" />
+      <module name="inspur-boat-module-test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
