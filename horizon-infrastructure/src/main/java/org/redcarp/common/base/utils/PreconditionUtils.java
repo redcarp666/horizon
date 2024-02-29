@@ -1,7 +1,7 @@
 package org.redcarp.common.base.utils;
 
 import org.redcarp.common.base.exception.HorizonBusinessException;
-import org.redcarp.core.util.AssertionUtils;
+import org.redcarp.horizon.core.util.AssertionUtils;
 
 /**
  * 先决条件

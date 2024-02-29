@@ -1,6 +1,6 @@
 package org.redcarp.common.base.exception;
 
-import org.redcarp.core.exception.HorizonRuntimeException;
+import org.redcarp.horizon.core.exception.HorizonRuntimeException;
 
 /**
  * 业务异常类
