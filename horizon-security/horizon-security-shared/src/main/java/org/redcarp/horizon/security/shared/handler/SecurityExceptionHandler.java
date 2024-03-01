@@ -1,6 +1,6 @@
 package org.redcarp.horizon.security.shared.handler;
 
-import org.redcarp.common.base.domain.Response;
+import org.redcarp.horizon.common.base.domain.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

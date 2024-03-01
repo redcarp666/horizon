@@ -1,4 +1,4 @@
-package org.redcarp.common.base.exception;
+package org.redcarp.horizon.common.base.exception;
 
 import org.redcarp.horizon.core.exception.HorizonRuntimeException;
 

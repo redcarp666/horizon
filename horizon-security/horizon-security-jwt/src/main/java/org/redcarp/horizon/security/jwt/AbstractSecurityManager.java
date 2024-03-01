@@ -1,7 +1,7 @@
 package org.redcarp.horizon.security.jwt;
 
 import cn.hutool.extra.spring.SpringUtil;
-import org.redcarp.common.base.utils.PreconditionUtils;
+import org.redcarp.horizon.common.base.utils.PreconditionUtils;
 import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
 import org.redcarp.horizon.security.shared.auth.LoginUsernamePassword;
 import org.redcarp.horizon.security.shared.configuration.PasswordEncoderService;

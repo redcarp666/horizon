@@ -1,4 +1,4 @@
-package org.redcarp.common.base.interceptor;
+package org.redcarp.horizon.common.base.interceptor;
 
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.servlet.HandlerInterceptor;

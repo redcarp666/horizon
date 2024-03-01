@@ -35,7 +35,7 @@ public class JmsTest {
 	}
 
 
-	static class JmsMessageInput implements Serializable {
+	public static class JmsMessageInput implements Serializable {
 		private Integer id;
 		private String msg;
 

@@ -1,4 +1,4 @@
-package org.redcarp.common.base.domain;
+package org.redcarp.horizon.common.base.domain;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
