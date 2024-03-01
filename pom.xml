@@ -4,7 +4,7 @@
 
     <groupId>org.redcarp</groupId>
     <artifactId>horizon</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>horizon</name>
@@ -18,12 +18,12 @@
 
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.7.13</spring-boot.version>
+        <spring-boot.version>2.7.18</spring-boot.version>
         <spring-cloud.version>2021.0.8</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <swagger.fox.version>2.9.2</swagger.fox.version>
@@ -64,11 +64,6 @@
             <dependency>
                 <groupId>org.redcarp</groupId>
                 <artifactId>horizon-component-swagger</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.redcarp</groupId>
-                <artifactId>horizon-security-jwt</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -125,12 +120,6 @@
                 <version>${commons.lang3.version}</version>
             </dependency>
 
-            <!-- 代码生成使用模板 -->
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity-engine-core</artifactId>
-                <version>${velocity.version}</version>
-            </dependency>
 
 
             <dependency>
