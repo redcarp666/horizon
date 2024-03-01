@@ -1,0 +1,7 @@
+spring:
+  artemis:
+    broker-url: tcp://localhost:61616
+
+  jms:
+    cache:
+      session-cache-size: 5

@@ -1,4 +1,4 @@
-package org.redcarp.horizon.component.jms.test;
+package org.redcarp.horizon.component.jms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
