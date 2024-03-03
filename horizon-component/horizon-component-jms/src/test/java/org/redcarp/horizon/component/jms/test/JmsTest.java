@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
 
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 /**
@@ -18,20 +19,24 @@ public class JmsTest {
 	@Autowired
 	JmsTemplate jmsTemplate;
 
+	@Autowired
+	TestService testService;
+
 	@Test
+	@Transactional
 	public void produce() {
 		JmsMessageInput input = new JmsMessageInput(1, "message");
 		jmsTemplate.convertAndSend("destination_1", input);
 	}
 
-	@JmsListener(destination = "destination_1")
-	public void consume1(JmsMessageInput msg) {
-		System.out.println("consume1 = " + msg.toString());
+	@Test
+	public void testServiceMethod() {
+		testService.testMsg();
 	}
 
 	@JmsListener(destination = "destination_1")
-	public void consume2(JmsMessageInput msg) {
-		System.out.println("consume2 = " + msg.toString());
+	public void consume1(JmsMessageInput msg) {
+		System.out.println("consume1 = " + msg.toString());
 	}
 
 
