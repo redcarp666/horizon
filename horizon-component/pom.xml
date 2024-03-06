@@ -15,5 +15,6 @@
         <module>horizon-component-jms</module>
         <module>horizon-component-mongodb</module>
         <module>horizon-component-redis</module>
+        <module>horizon-component-quartz</module>
     </modules>
 </project>

@@ -1,0 +1,24 @@
+spring:
+  quartz:
+    #可配置集群模式，需要多个实例连接同一个数据库
+    #不配置的话，默认使用内存
+    job-store-type: jdbc
+    #如果已经有相关quartz表的话，不要配置always，否则会被drop
+    jdbc:
+      initialize-schema: never
+
+horizon:
+  quartz:
+    datasource:
+      #see HikariConfig(spring-boot-starter-jdbc defaults)
+      jdbc-url: jdbc:mysql://localhost:3306/horizon_quartz?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      connection-timeout: 15000
+
+
+
+
+
+
