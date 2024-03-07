@@ -63,6 +63,11 @@
             </dependency>
             <dependency>
                 <groupId>org.redcarp</groupId>
+                <artifactId>horizon-security-jwt</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
                 <artifactId>horizon-security-shared</artifactId>
                 <version>${project.version}</version>
             </dependency>

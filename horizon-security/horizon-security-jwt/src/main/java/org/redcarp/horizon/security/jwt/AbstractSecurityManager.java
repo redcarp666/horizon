@@ -1,11 +1,11 @@
 package org.redcarp.horizon.security.jwt;
 
 import cn.hutool.extra.spring.SpringUtil;
-import org.redcarp.horizon.infrastructure.utils.PreconditionUtils;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
-import org.redcarp.horizon.security.shared.auth.LoginUsernamePassword;
-import org.redcarp.horizon.security.shared.configuration.PasswordEncoderService;
 import lombok.extern.slf4j.Slf4j;
+import org.redcarp.horizon.core.util.AssertionUtils;
+import org.redcarp.horizon.security.jwt.auth.LoginUsernamePassword;
+import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
+import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -24,7 +24,7 @@ public abstract class AbstractSecurityManager implements SecurityManager, UserDe
 	@Override
 	public Jwt login(LoginUsernamePassword loginUsernamePassword) {
 		AuthenticationManager authenticationManager = SpringUtil.getBean(AuthenticationManager.class);
-		PreconditionUtils.requireNotNull(authenticationManager, "authentication.manager.is.null");
+		AssertionUtils.shouldNotNull(authenticationManager, "authentication.manager.is.null");
 		Authentication authentication = authenticationManager.authenticate(loginUsernamePassword);
 		Jwt jwt = generateJwt(authentication);
 		SecurityContext context = SecurityContextHolder.createEmptyContext();
@@ -39,7 +39,7 @@ public abstract class AbstractSecurityManager implements SecurityManager, UserDe
 	@Override
 	public void changePassword(String oldPassword, String newPassword) {
 		AuthenticationManager authenticationManager = SpringUtil.getBean(AuthenticationManager.class);
-		PreconditionUtils.requireNotNull(authenticationManager, "authentication.manager.is.null");
+		AssertionUtils.shouldNotNull(authenticationManager, "authentication.manager.is.null");
 		String userName = CurrentUserHolder.getCurrentUserName();
 		authenticationManager.authenticate(new LoginUsernamePassword(userName, oldPassword));
 		log.info(String.format("Changing password for user '%s'", userName));

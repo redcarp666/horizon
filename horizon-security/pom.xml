@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>horizon-security-jwt</module>
-        <module>horizon-security-shared</module>
     </modules>
 
 

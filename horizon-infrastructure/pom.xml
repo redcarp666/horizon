@@ -97,6 +97,10 @@
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-component-swagger</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.redcarp</groupId>
+            <artifactId>horizon-security-jwt</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,4 +1,4 @@
-package org.redcarp.horizon.security.shared.configuration;
+package org.redcarp.horizon.security.jwt.config;
 
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;

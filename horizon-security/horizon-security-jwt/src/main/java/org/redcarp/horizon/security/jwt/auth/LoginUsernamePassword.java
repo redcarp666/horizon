@@ -1,4 +1,4 @@
-package org.redcarp.horizon.security.shared.auth;
+package org.redcarp.horizon.security.jwt.auth;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 

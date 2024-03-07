@@ -1,6 +1,6 @@
 package org.redcarp.horizon.security.jwt;
 
-import org.redcarp.horizon.security.shared.auth.LoginUsernamePassword;
+import org.redcarp.horizon.security.jwt.auth.LoginUsernamePassword;
 import org.springframework.security.oauth2.jwt.Jwt;
 
 /**
