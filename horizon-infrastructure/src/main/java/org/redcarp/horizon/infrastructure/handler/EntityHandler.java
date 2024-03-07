@@ -4,8 +4,11 @@ import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
 import org.redcarp.horizon.core.util.EmptyUtils;
 import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.Objects;
+import java.util.function.Supplier;
 
 /**
  * 实体处理器
@@ -13,6 +16,7 @@ import java.util.Date;
  * @author redcarp
  * @date 2024/2/20
  */
+@Component
 public class EntityHandler implements MetaObjectHandler {
 	@Override
 	public void insertFill(MetaObject metaObject) {
@@ -23,6 +27,15 @@ public class EntityHandler implements MetaObjectHandler {
 		}
 		this.strictInsertFill(metaObject, "createTime", Date.class, new Date());
 		this.strictInsertFill(metaObject, "updateTime", Date.class, new Date());
+	}
+
+	@Override
+	public MetaObjectHandler strictFillStrategy(MetaObject metaObject, String fieldName, Supplier<?> fieldVal) {
+		Object obj = fieldVal.get();
+		if (Objects.nonNull(obj)) {
+			metaObject.setValue(fieldName, obj);
+		}
+		return this;
 	}
 
 	@Override
