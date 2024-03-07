@@ -1,6 +1,6 @@
-package org.redcarp.horizon.common.base.configuration;
+package org.redcarp.horizon.infrastructure.configuration;
 
-import org.redcarp.horizon.common.base.interceptor.LocalizationInterceptor;
+import org.redcarp.horizon.infrastructure.interceptor.LocalizationInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

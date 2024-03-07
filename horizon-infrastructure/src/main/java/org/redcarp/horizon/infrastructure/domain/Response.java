@@ -1,4 +1,4 @@
-package org.redcarp.horizon.common.base.domain;
+package org.redcarp.horizon.infrastructure.domain;
 import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;

@@ -1,7 +1,7 @@
-package org.redcarp.horizon.common.base.configuration;
+package org.redcarp.horizon.infrastructure.configuration;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import org.redcarp.horizon.common.base.handler.EntityHandler;
+import org.redcarp.horizon.infrastructure.handler.EntityHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

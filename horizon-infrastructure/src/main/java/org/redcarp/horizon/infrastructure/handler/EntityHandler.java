@@ -1,4 +1,4 @@
-package org.redcarp.horizon.common.base.handler;
+package org.redcarp.horizon.infrastructure.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

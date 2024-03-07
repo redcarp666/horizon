@@ -1,4 +1,4 @@
-package org.redcarp.horizon.common.base.constant;
+package org.redcarp.horizon.infrastructure.constant;
 
 public class RedisConstants {
 

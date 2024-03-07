@@ -1,7 +1,7 @@
-package org.redcarp.horizon.common.base.handler;
+package org.redcarp.horizon.infrastructure.handler;
 
-import org.redcarp.horizon.common.base.domain.Response;
-import org.redcarp.horizon.common.base.exception.HorizonBusinessException;
+import org.redcarp.horizon.infrastructure.domain.Response;
+import org.redcarp.horizon.infrastructure.exception.HorizonBusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Optional;
 
-import static org.redcarp.horizon.common.base.domain.Response.FAIL;
+import static org.redcarp.horizon.infrastructure.domain.Response.FAIL;
 
 /**
  * 全局异常处理器

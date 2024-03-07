@@ -1,6 +1,6 @@
-package org.redcarp.horizon.common.base.utils;
+package org.redcarp.horizon.infrastructure.utils;
 
-import org.redcarp.horizon.common.base.exception.HorizonBusinessException;
+import org.redcarp.horizon.infrastructure.exception.HorizonBusinessException;
 import org.redcarp.horizon.core.util.AssertionUtils;
 
 /**

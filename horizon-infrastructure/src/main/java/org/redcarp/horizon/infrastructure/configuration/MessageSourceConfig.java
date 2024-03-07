@@ -1,4 +1,4 @@
-package org.redcarp.horizon.common.base.configuration;
+package org.redcarp.horizon.infrastructure.configuration;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
