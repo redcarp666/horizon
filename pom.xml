@@ -33,8 +33,9 @@
         <hutool.version>5.8.26</hutool.version>
         <mybatis-plus.version>3.5.5</mybatis-plus.version>
         <mysql.version>8.0.33</mysql.version>
-        <apache.poi.version>5.2.5</apache.poi.version>
+        <apache.poi.version>4.1.2</apache.poi.version>
         <fastjson2.version>2.0.47</fastjson2.version>
+        <easyexcel.version>3.3.3</easyexcel.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -144,6 +145,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
