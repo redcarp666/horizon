@@ -10,11 +10,10 @@ import java.nio.charset.StandardCharsets;
  */
 public class ResponseUtils {
 
-	public static HttpServletResponse responseXLSXFileToDownload(HttpServletResponse response, String rawFileName) {
+	public static void responseXLSXFileToDownload(HttpServletResponse response, String rawFileName) {
 		String fileName = URLEncoder.encode(rawFileName, StandardCharsets.UTF_8).replaceAll("\\+", "%20");
 		response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 		response.setCharacterEncoding("utf-8");
 		response.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileName + ".xlsx");
-		return response;
 	}
 }

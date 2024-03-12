@@ -16,5 +16,9 @@
         <module>horizon-component-mongodb</module>
         <module>horizon-component-redis</module>
         <module>horizon-component-quartz</module>
+        <module>horizon-component-flyway</module>
+        <module>horizon-component-druid</module>
+        <module>horizon-component-xa</module>
+        <module>horizon-component-mybatisplus</module>
     </modules>
 </project>

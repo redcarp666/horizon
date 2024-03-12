@@ -29,6 +29,10 @@
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-component-redis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.redcarp</groupId>
+            <artifactId>horizon-core</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
