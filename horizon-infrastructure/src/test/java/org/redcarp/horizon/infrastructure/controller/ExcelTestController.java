@@ -46,9 +46,13 @@ public class ExcelTestController {
 
 	@PostMapping("/upload")
 	public String easyExcelUpload(MultipartFile file) throws IOException {
+		// 这里采用读取所有，整合成list方式
+		// 也可以用读一行处理一行的方式，需要定义监听器
+		// 文档地址：https://easyexcel.opensource.alibaba.com/docs/current/quickstart/read
 		List<ExcelExport> objects = EasyExcel.read(file.getInputStream()).sheet().doReadSync();
 		return JSONUtil.toJsonStr(objects);
 	}
+
 
 	@Data
 	@ExcelIgnoreUnannotated
