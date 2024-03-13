@@ -7,9 +7,9 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Request <T> implements Serializable {
+public class Request<T> implements Serializable {
 
-    Page page;
-    T data;
+	Page page;
+	T data;
 
 }
