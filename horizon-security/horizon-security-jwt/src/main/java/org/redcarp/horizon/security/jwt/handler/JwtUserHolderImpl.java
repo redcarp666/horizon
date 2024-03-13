@@ -2,6 +2,7 @@ package org.redcarp.horizon.security.jwt.handler;
 
 import org.redcarp.horizon.core.security.SecurityUserHolder;
 import org.redcarp.horizon.security.jwt.CurrentUserHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,4 +20,14 @@ public class JwtUserHolderImpl implements SecurityUserHolder {
 	public String getCurrentUserName() {
 		return CurrentUserHolder.getCurrentUserName();
 	}
+
+	@Override
+	public String getCurrentToken() {
+		Jwt jwt = CurrentUserHolder.getCurrentJwt();
+		if (jwt != null) {
+			return jwt.getTokenValue();
+		} else
+			return null;
+	}
+
 }

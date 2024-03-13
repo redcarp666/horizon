@@ -10,4 +10,6 @@ public interface SecurityUserHolder {
 	String getCurrentUserId();
 
 	String getCurrentUserName();
+
+	String getCurrentToken();
 }
