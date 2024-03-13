@@ -18,7 +18,8 @@ import java.util.function.Consumer;
  */
 @Component
 public class JwtTokens {
-	@Autowired
+
+	@Autowired(required = false)
 	JwtEncoder jwtEncoder;
 	@Value("${jwt.token.expiry.seconds:3600}")
 	Long tokenExpirySeconds;
@@ -45,7 +46,7 @@ public class JwtTokens {
 		if (otherClaims != null) {
 			builder.claims(otherClaims);
 		}
-		return jwtEncoder.encode(JwtEncoderParameters.from(builder.build()));
+		return jwtEncoder == null ? null : jwtEncoder.encode(JwtEncoderParameters.from(builder.build()));
 	}
 }
 

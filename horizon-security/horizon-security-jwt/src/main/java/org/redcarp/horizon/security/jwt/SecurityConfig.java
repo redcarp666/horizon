@@ -6,8 +6,9 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import org.redcarp.horizon.security.jwt.config.JwtKeyConfig;
 import org.redcarp.horizon.security.jwt.filter.BlacklistFilter;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -24,9 +25,6 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 
-import java.security.interfaces.RSAPrivateKey;
-import java.security.interfaces.RSAPublicKey;
-
 /**
  * spring security相关配置
  *
@@ -37,19 +35,16 @@ import java.security.interfaces.RSAPublicKey;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-	@Value("${jwt.private.key}")
-	RSAPrivateKey privateKey;
-	@Value("${jwt.public.key}")
-	RSAPublicKey key;
 
 	@Bean
-	JwtDecoder jwtDecoder() {
-		return NimbusJwtDecoder.withPublicKey(this.key).build();
+	JwtDecoder jwtDecoder(JwtKeyConfig config) {
+		return NimbusJwtDecoder.withPublicKey(config.getKey()).build();
 	}
 
 	@Bean
-	JwtEncoder jwtEncoder() {
-		JWK jwk = new RSAKey.Builder(this.key).privateKey(this.privateKey).build();
+	@ConditionalOnProperty("jwt.private.key")
+	JwtEncoder jwtEncoder(JwtKeyConfig config) {
+		JWK jwk = new RSAKey.Builder(config.getKey()).privateKey(config.getPrivateKey()).build();
 		JWKSource<SecurityContext> jwks = new ImmutableJWKSet<>(new JWKSet(jwk));
 		return new NimbusJwtEncoder(jwks);
 	}
