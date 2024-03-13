@@ -4,7 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import org.redcarp.horizon.security.jwt.exception.JwtTokenBlackException;
 import org.redcarp.horizon.security.jwt.handler.BlacklistHandler;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
+import org.redcarp.horizon.security.jwt.CurrentUserHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.filter.OncePerRequestFilter;

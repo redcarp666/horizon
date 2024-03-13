@@ -1,4 +1,4 @@
-package org.redcarp.horizon.security.jwt.handler;
+package org.redcarp.horizon.security.jwt;
 
 import org.redcarp.horizon.core.exception.NotSupportedException;
 import org.springframework.security.core.Authentication;

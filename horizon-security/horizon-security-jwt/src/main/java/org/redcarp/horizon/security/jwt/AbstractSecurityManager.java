@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.redcarp.horizon.core.util.AssertionUtils;
 import org.redcarp.horizon.security.jwt.auth.LoginUsernamePassword;
 import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
-import org.redcarp.horizon.security.jwt.handler.CurrentUserHolder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

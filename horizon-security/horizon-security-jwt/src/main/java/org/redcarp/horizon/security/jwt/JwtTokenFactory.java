@@ -1,4 +1,4 @@
-package org.redcarp.horizon.security.jwt.token;
+package org.redcarp.horizon.security.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,7 +17,7 @@ import java.util.function.Consumer;
  * @date 2024/2/22
  */
 @Component
-public class JwtTokens {
+public class JwtTokenFactory {
 
 	@Autowired(required = false)
 	JwtEncoder jwtEncoder;
@@ -30,15 +30,15 @@ public class JwtTokens {
 	@Value("${jwt.refresh.token.expiry.seconds:1296000}")
 	Long refreshTokenExpirySeconds;
 
-	public Jwt generateJwtToken(String subject, Consumer<Map<String, Object>> otherClaims) {
-		return getJwt(subject, otherClaims, tokenExpirySeconds);
+	public Jwt createJwtToken(String subject, Consumer<Map<String, Object>> otherClaims) {
+		return doCreateJwt(subject, otherClaims, tokenExpirySeconds);
 	}
 
-	public Jwt generateJwtRefreshToken(String subject, Consumer<Map<String, Object>> otherClaims) {
-		return getJwt(subject, otherClaims, refreshTokenExpirySeconds);
+	public Jwt createJwtRefreshToken(String subject, Consumer<Map<String, Object>> otherClaims) {
+		return doCreateJwt(subject, otherClaims, refreshTokenExpirySeconds);
 	}
 
-	private Jwt getJwt(String subject, Consumer<Map<String, Object>> otherClaims, Long refreshTokenExpirySeconds) {
+	private Jwt doCreateJwt(String subject, Consumer<Map<String, Object>> otherClaims, Long refreshTokenExpirySeconds) {
 		Instant now = Instant.now();
 
 		JwtClaimsSet.Builder builder = JwtClaimsSet.builder().subject(subject).expiresAt(now.plusSeconds(

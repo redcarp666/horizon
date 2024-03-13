@@ -1,6 +1,7 @@
 package org.redcarp.horizon.security.jwt.handler;
 
 import org.redcarp.horizon.core.security.SecurityUserHolder;
+import org.redcarp.horizon.security.jwt.CurrentUserHolder;
 import org.springframework.stereotype.Component;
 
 /**
