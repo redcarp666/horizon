@@ -58,40 +58,6 @@ public class ClassesUtils {
 		}
 	}
 
-	public static void checkPackageAccess(Class<?> clazz) {
-		checkPackageAccess(clazz.getName());
-		if (Proxy.isProxyClass(clazz)) {
-			checkProxyPackageAccess(clazz);
-		}
-	}
-
-	public static void checkPackageAccess(String name) {
-		SecurityManager s = System.getSecurityManager();
-		if (s != null) {
-			String cname = name.replace('/', PACKAGE_SEPARATOR_CHAR);
-			if (!cname.isEmpty() && cname.charAt(0) == '[') {
-				int b = cname.lastIndexOf('[') + 2;
-				if (b > 1 && b < cname.length()) {
-					cname = cname.substring(b);
-				}
-			}
-			int i = cname.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
-			if (i != -1) {
-				s.checkPackageAccess(cname.substring(0, i));
-			}
-		}
-	}
-
-	public static void checkProxyPackageAccess(Class<?> clazz) {
-		SecurityManager s = System.getSecurityManager();
-		if (s != null && Proxy.isProxyClass(clazz)) {
-			// check proxy interfaces if the given class is a proxy class
-			for (Class<?> intf : clazz.getInterfaces()) {
-				checkPackageAccess(intf);
-			}
-		}
-	}
-
 	public static ClassLoader defaultClassLoader() {
 		ClassLoader classLoader = FunctionUtils.trySupplied(Thread.currentThread()::getContextClassLoader);
 		if (classLoader == null) {
@@ -203,44 +169,6 @@ public class ClassesUtils {
 		}
 		int lastDot = fullClassName.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
 		return lastDot < 0 ? StrUtil.EMPTY : fullClassName.substring(0, lastDot);
-	}
-
-	public static String getShortClassName(String className) {
-		String shortClassName = className;
-		if (EmptyUtils.isEmpty(shortClassName)) {
-			return StrUtil.EMPTY;
-		}
-		final StringBuilder arrayPrefix = new StringBuilder();
-		if (!shortClassName.isEmpty() && shortClassName.charAt(0) == '[') {
-			while (shortClassName.charAt(0) == '[') {
-				shortClassName = shortClassName.substring(1);
-				arrayPrefix.append("[]");
-			}
-			if (shortClassName.charAt(0) == 'L' && shortClassName.charAt(shortClassName.length() - 1) == ';') {
-				shortClassName = shortClassName.substring(1, shortClassName.length() - 1);
-			}
-		}
-		final int lastDotIdx = shortClassName.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
-		final int innerIdx = shortClassName.indexOf(INNER_CLASS_SEPARATOR_CHAR, lastDotIdx == -1 ? 0 : lastDotIdx + 1);
-		String out = shortClassName.substring(lastDotIdx + 1);
-		if (innerIdx != -1) {
-			out = out.replace(INNER_CLASS_SEPARATOR_CHAR, PACKAGE_SEPARATOR_CHAR);
-		}
-		return out + arrayPrefix;
-	}
-
-	public static Class<?> getUserClass(Class<?> clazz) {
-		if (clazz != null && clazz.getName().contains(CGLIB_CLASS_SEPARATOR)) {
-			Class<?> superclass = clazz.getSuperclass();
-			if (superclass != null && Object.class != superclass) {
-				return superclass;
-			}
-		}
-		return clazz;
-	}
-
-	public static Class<?> getUserClass(Object instance) {
-		return getUserClass(instance.getClass());
 	}
 
 	public static boolean isConcrete(Class<?> clazz) {
