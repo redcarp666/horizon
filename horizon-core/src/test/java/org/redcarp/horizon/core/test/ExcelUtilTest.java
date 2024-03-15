@@ -1,3 +1,5 @@
+package org.redcarp.horizon.core.test;
+
 import cn.hutool.core.collection.ListUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.poi.excel.ExcelUtil;
@@ -44,7 +46,7 @@ public class ExcelUtilTest {
 
 	@Data
 	@AllArgsConstructor
-	private static class User {
+	public static class User {
 		private String name;
 		private Integer age;
 		private String telephone;

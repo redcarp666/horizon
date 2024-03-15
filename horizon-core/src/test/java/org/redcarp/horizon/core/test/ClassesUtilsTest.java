@@ -1,3 +1,5 @@
+package org.redcarp.horizon.core.test;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.redcarp.horizon.core.util.ClassesUtils;

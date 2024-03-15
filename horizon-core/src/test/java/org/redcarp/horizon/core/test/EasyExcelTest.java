@@ -1,3 +1,5 @@
+package org.redcarp.horizon.core.test;
+
 import cn.hutool.core.collection.ListUtil;
 import cn.hutool.core.io.FileUtil;
 import com.alibaba.excel.EasyExcel;
@@ -23,9 +25,7 @@ public class EasyExcelTest {
 		//headRowNumber(0)从第0行开始读取
 		List<Map<?, ?>> objects = EasyExcel.read(file).sheet().headRowNumber(0).doReadSync();
 		//map的key值为0,1,2,3,4
-		objects.forEach(object -> {
-			System.out.println("object = " + object);
-		});
+		objects.forEach(object -> System.out.println("object = " + object));
 	}
 
 	@Test

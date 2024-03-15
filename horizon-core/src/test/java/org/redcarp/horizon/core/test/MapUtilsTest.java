@@ -1,3 +1,5 @@
+package org.redcarp.horizon.core.test;
+
 import cn.hutool.core.map.MapUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

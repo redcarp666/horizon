@@ -1,3 +1,5 @@
+package org.redcarp.horizon.core.test;
+
 import cn.hutool.core.io.FileUtil;
 import org.junit.jupiter.api.Test;
 
