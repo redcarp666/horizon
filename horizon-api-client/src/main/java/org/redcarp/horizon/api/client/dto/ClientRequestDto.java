@@ -1,4 +1,4 @@
-package org.redcarp.horizon.api.client;
+package org.redcarp.horizon.api.client.dto;
 
 import lombok.Data;
 

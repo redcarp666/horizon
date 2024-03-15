@@ -1,5 +1,6 @@
 package org.redcarp.horizon.api.client;
 
+import org.redcarp.horizon.api.client.dto.ClientRequestDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

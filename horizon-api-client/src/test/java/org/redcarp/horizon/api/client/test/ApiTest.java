@@ -2,7 +2,7 @@ package org.redcarp.horizon.api.client.test;
 
 import com.alibaba.fastjson2.JSON;
 import org.junit.jupiter.api.Test;
-import org.redcarp.horizon.api.client.ClientRequestDto;
+import org.redcarp.horizon.api.client.dto.ClientRequestDto;
 import org.redcarp.horizon.api.client.UserServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -190,7 +190,6 @@ public class EmptyUtils {
 	}
 
 
-
 	public static int sizeOf(final long[] object) {
 		return object == null ? 0 : object.length;
 	}

@@ -40,6 +40,7 @@ public class MapUtils {
 		}
 		return mapOf(HashMap::new, array);
 	}
+
 	public static <K, V> Map<K, V> linkedHashMapOf(Object... objects) {
 		return mapOf(LinkedHashMap::new, objects);
 	}

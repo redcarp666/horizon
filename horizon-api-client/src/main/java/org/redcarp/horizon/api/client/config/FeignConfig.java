@@ -1,4 +1,4 @@
-package org.redcarp.horizon.api.client;
+package org.redcarp.horizon.api.client.config;
 
 import feign.RequestInterceptor;
 import org.redcarp.horizon.core.security.SecurityUserHolder;

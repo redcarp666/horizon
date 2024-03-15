@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author redcarp
@@ -49,7 +50,7 @@ public class ExcelTestController {
 		// 这里采用读取所有，整合成list方式
 		// 也可以用读一行处理一行的方式，需要定义监听器
 		// 文档地址：https://easyexcel.opensource.alibaba.com/docs/current/quickstart/read
-		List<ExcelExport> objects = EasyExcel.read(file.getInputStream()).sheet().doReadSync();
+		List<Map<?, ?>> objects = EasyExcel.read(file.getInputStream()).sheet().doReadSync();
 		return JSONUtil.toJsonStr(objects);
 	}
 

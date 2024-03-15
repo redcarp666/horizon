@@ -7,7 +7,7 @@ import java.util.Locale;
 
 public class EncryptUtils {
 
-	
+
 	private EncryptUtils() {
 	}
 

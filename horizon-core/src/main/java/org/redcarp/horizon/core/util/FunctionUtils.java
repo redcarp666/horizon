@@ -4,8 +4,6 @@ import java.util.Optional;
 import java.util.concurrent.Callable;
 import java.util.function.*;
 
-import static org.redcarp.horizon.core.util.AssertionUtils.shouldNotNull;
-
 
 public class FunctionUtils {
 
