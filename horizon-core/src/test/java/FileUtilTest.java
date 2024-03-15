@@ -16,6 +16,7 @@ public class FileUtilTest {
 		String name = file.getName();
 		System.out.println("name = " + name);
 		String absolutePath = file.getAbsolutePath();
+		//absolutePath = /Users/renweiwei/IdeaProjects/horizon/horizon-core/target/test-classes/测试.xlsx
 		System.out.println("absolutePath = " + absolutePath);
 	}
 }

@@ -1,5 +1,7 @@
+import cn.hutool.core.collection.ListUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.poi.excel.ExcelUtil;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.jupiter.api.Test;
 
@@ -32,10 +34,19 @@ public class ExcelUtilTest {
 		users.forEach(user -> System.out.println("user = " + user));
 	}
 
+	@Test
+	public void testWrite() {
+		User user1 = new User("张飞", 28, "110");
+		User user2 = new User("关羽", 26, "120");
+		User user3 = new User("刘备", 30, "119");
+		ExcelUtil.getWriter("测试-写-hutool.xlsx").write(ListUtil.of(user1, user2, user3)).flush().close();
+	}
+
 	@Data
+	@AllArgsConstructor
 	private static class User {
 		private String name;
-		private String age;
+		private Integer age;
 		private String telephone;
 	}
 }
