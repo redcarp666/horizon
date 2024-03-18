@@ -32,7 +32,7 @@ public class ExcelTestController {
 	public void export(HttpServletResponse response) throws IOException {
 		ExcelExport e1 = new ExcelExport();
 		e1.setId("1");
-		e1.setUserName("sushuaihao");
+		e1.setUserName("redcarp");
 		e1.setAge(BigDecimal.valueOf(18));
 		e1.setCreateTime(new Date());
 		ExcelExport e2 = new ExcelExport();
