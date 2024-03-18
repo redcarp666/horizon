@@ -64,4 +64,12 @@ public class ObjectUtilsTest {
 		int compare2 = ObjectUtils.compare(zf, gy, Comparator.comparing(User::getAge));
 		Assertions.assertEquals(0, compare2);
 	}
+
+	@Test
+	public void maxAndMin() {
+		Integer max = ObjectUtils.max(1, 2, 3, 4, 45);
+		Assertions.assertEquals(45, max);
+		Integer min = ObjectUtils.min(1, 2, 3, 4, 45);
+		Assertions.assertEquals(1, min);
+	}
 }
