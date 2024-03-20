@@ -4,3 +4,4 @@ spring:
   # see ArtemisXAConnectionFactoryConfiguration,有XA-jta环境(依赖atomikos)则自动装配XAConnection
   jta:
     enabled: true
+    log-dir: /Users/renweiwei/IdeaProjects/tempFile/transaction-log/horizon-component-jms/

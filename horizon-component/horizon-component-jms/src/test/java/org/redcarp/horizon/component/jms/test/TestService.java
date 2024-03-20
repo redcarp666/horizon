@@ -1,5 +1,6 @@
 package org.redcarp.horizon.component.jms.test;
 
+import org.redcarp.horizon.component.jms.test.dto.UserRegisterMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
@@ -27,6 +28,11 @@ public class TestService {
 	@JmsListener(destination = "destination_2")
 	public void consume2(String msg) {
 		System.out.println("consume2 = " + msg);
+	}
+
+	@JmsListener(destination = "horizon-system-user-register")
+	public void consume2(UserRegisterMessage msg) {
+		System.out.println("UserRegisterMessage = " + msg.toString());
 	}
 
 }
