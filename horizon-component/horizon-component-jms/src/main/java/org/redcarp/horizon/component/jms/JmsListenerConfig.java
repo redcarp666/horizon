@@ -10,9 +10,10 @@ import org.springframework.messaging.converter.MessageConverter;
 import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
 
 /**
- * 该{@link org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver
- * HandlerMethodArgumentResolver}类用于针对@JmsListener标注的方法中的不同参数类型，选择不同的参数解析器（解析器将message解析出来转换为你的方法参数类型后，调用时传入到你方法中）
- * 我们设置MessageConverter給DefaultMessageHandlerMethodFactory后，它将MessageConverter装饰成HandlerMethodArgumentResolver的某个实现类
+ * {@link org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver
+ * HandlerMethodArgumentResolver}解析器将message解析出来转换为你的方法参数类型后，调用时传入到你用@JmsListener标注的方法中. 针对方法签名的不同参数类型，有不同的参数解析器。
+ * 我们设置MessageConverter給DefaultMessageHandlerMethodFactory后，它将MessageConverter装饰成HandlerMethodArgumentResolver
+ * 的某个实现类，解析出来的时候可以使用我们的设置的MessageConverter
  *
  * @author redcarp
  * @date 2024/3/19
