@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author redcarp
  * @date 2024/3/13
  */
-@FeignClient(name = "user-service", url = "${user.service.url}")
+@FeignClient(name = "SYSTEM-SERVICE")
 public interface UserServiceClient {
 	@RequestMapping(method = RequestMethod.POST, value = "/system/sysUser/getList")
 	Object getUserList(@RequestBody ClientRequestDto params);
