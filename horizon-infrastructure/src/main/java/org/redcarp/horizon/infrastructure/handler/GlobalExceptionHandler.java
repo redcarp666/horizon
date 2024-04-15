@@ -32,22 +32,22 @@ public class GlobalExceptionHandler {
 	public Response<Integer> horizonBusinessExceptionHandle(HorizonBusinessException exception) {
 		String messageSourceMessage = messageSource.getMessage(exception.getMessageKey(),
 		                                                       exception.getParams(),
-		                                                       "something wrong",
+		                                                       exception.getMessageKey(),
 		                                                       LocaleContextHolder.getLocale());
 		return Response.fail(Optional.ofNullable(exception.getCode()).orElse(FAIL).intValue(), messageSourceMessage);
 	}
 
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
-	public Response<Integer> methodArgumentNotValidExceptionHandle(MethodArgumentNotValidException exception) {
+	public Response<String> methodArgumentNotValidExceptionHandle(MethodArgumentNotValidException exception) {
 		FieldError fieldError = exception.getFieldError();
 		if (fieldError != null) {
 			String defaultMessage = fieldError.getDefaultMessage();
 			if (StringUtils.isNotBlank(defaultMessage)) {
 				String messageSourceMessage = messageSource.getMessage(defaultMessage,
 				                                                       null,
-				                                                       exception.getMessage(),
+				                                                       defaultMessage,
 				                                                       LocaleContextHolder.getLocale());
-				return Response.fail(HttpStatus.BAD_REQUEST.value(), messageSourceMessage);
+				return Response.restResult(fieldError.getField(), HttpStatus.BAD_REQUEST.value(), messageSourceMessage);
 			}
 		}
 		return Response.fail();
