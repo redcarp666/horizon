@@ -28,7 +28,7 @@ public class SwaggerConfig implements WebMvcConfigurer{
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select().paths(PathSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.inspur"))
+                .apis(RequestHandlerSelectors.basePackage("org.redcarp"))
                 .build()
                 .securitySchemes(securitySchemes()).securityContexts(securityContexts());
     }
@@ -36,10 +36,10 @@ public class SwaggerConfig implements WebMvcConfigurer{
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("inspur boat")
-                .description("inspur boat")
+                .title("redcarp horizon")
+                .description("redcarp horizon")
                 .version("1.0.0")
-                .contact(new Contact("Edward","http://www.baidu.com","247854696@qq.com"))
+                .contact(new Contact("redcarp","http://www.baidu.com",""))
                 .build();
     }
 
