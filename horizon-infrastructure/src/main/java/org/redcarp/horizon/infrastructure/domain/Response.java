@@ -8,8 +8,6 @@ import java.io.Serializable;
 /**
  * 响应信息主体
  *
- * @author yangjianfeng
- * @date 2023/12/01
  */
 public class Response<T> implements Serializable {
 	/**
