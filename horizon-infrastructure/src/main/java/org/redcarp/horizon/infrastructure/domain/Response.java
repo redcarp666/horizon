@@ -1,5 +1,7 @@
 package org.redcarp.horizon.infrastructure.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 import java.io.Serializable;
@@ -9,6 +11,8 @@ import java.io.Serializable;
  * 响应信息主体
  *
  */
+@Setter
+@Getter
 public class Response<T> implements Serializable {
 	/**
 	 * 成功
@@ -75,35 +79,4 @@ public class Response<T> implements Serializable {
 		return Response.SUCCESS == ret.getCode();
 	}
 
-	public int getCode() {
-		return code;
-	}
-
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	public T getData() {
-		return data;
-	}
-
-	public void setData(T data) {
-		this.data = data;
-	}
-
-	public String getMdc() {
-		return mdc;
-	}
-
-	public void setMdc(String mdc) {
-		this.mdc = mdc;
-	}
 }
