@@ -43,7 +43,7 @@ public abstract class AbstractSecurityManager implements SecurityManager, UserDe
 		authenticationManager.authenticate(new LoginUsernamePassword(userName, oldPassword));
 		log.info(String.format("Changing password for user '%s'", userName));
 		updatePassword(userName, PasswordEncoderService.getPasswordEncoder().encode(newPassword));
-		passwordChangeSucceed();
+		logout();
 	}
 
 
@@ -54,7 +54,6 @@ public abstract class AbstractSecurityManager implements SecurityManager, UserDe
 
 	}
 
-	protected void passwordChangeSucceed() {
+	public abstract void logout();
 
-	}
 }
