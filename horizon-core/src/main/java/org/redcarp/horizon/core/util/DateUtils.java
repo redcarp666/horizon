@@ -25,7 +25,7 @@ public class DateUtils extends DateUtil {
 	 * @param startDate 开始日期
 	 * @param endDate 结束日期
 	 * @return 开始日期到结束日期每个日期按顺序的列表
-	 * @author sushuaihao
+	 * @author ssh
 	 * @date 2025/1/14
 	 * */
 	public static List<String> dateRangeToSeqList(String startDate, String endDate) {
