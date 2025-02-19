@@ -1,4 +1,4 @@
-package org.redcarp.horizon.infrastructure.service;
+package org.redcarp.horizon.infrastructure.domain;
 
 import cn.hutool.core.text.NamingCase;
 import cn.hutool.core.util.ReflectUtil;
