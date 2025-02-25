@@ -1,5 +1,6 @@
 package org.redcarp.horizon.infrastructure.exception;
 
+import lombok.Getter;
 import org.redcarp.horizon.core.exception.HorizonRuntimeException;
 
 /**
@@ -8,6 +9,7 @@ import org.redcarp.horizon.core.exception.HorizonRuntimeException;
  * @author redcarp
  * @date 2024/2/18
  */
+@Getter
 public class HorizonBusinessException extends HorizonRuntimeException {
 	private final String messageKey;
 	private Integer code;
@@ -38,15 +40,4 @@ public class HorizonBusinessException extends HorizonRuntimeException {
 		this.messageKey = messageKey;
 	}
 
-	public Object[] getParams() {
-		return params;
-	}
-
-	public Integer getCode() {
-		return code;
-	}
-
-	public String getMessageKey() {
-		return messageKey;
-	}
 }
