@@ -1,9 +1,7 @@
 package org.redcarp.horizon.security.jwt.exception;
 
-import org.springframework.http.HttpHeaders;
+import org.redcarp.horizon.core.web.Response;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -18,11 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class SecurityExceptionHandler {
 
 	@ExceptionHandler(value = BadCredentialsException.class)
-	public ResponseEntity<String> badCredentialsExceptionHandle(BadCredentialsException exception) {
-		HttpHeaders httpHeaders = new HttpHeaders();
-		//设置为application-json，以防止中文乱码
-		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).headers(httpHeaders).body(exception.getMessage());
+	public Response<String> badCredentialsExceptionHandle(BadCredentialsException exception) {
+		return Response.fail(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage());
 	}
-
 }
