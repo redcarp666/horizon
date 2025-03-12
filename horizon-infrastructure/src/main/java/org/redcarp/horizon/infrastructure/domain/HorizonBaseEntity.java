@@ -35,7 +35,7 @@ public class HorizonBaseEntity implements Serializable {
 
 	@ApiModelProperty(name = "创建时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
+	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN, timezone = "GMT+8")
 	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 
@@ -45,7 +45,7 @@ public class HorizonBaseEntity implements Serializable {
 
 	@ApiModelProperty(name = "更新时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
-	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
+	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN, timezone = "GMT+8")
 	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updateTime;
 
