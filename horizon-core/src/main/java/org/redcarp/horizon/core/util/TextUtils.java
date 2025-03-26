@@ -12,10 +12,7 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -195,20 +192,16 @@ public class TextUtils {
 	public static <T> Stream<T> lines(final BufferedReader reader, final int offset, final BiPredicate<Integer, String> terminator, final Function<String, T> converter) {
 		AssertionUtils.shouldNoneNull(reader, converter);
 		return StreamUtils.streamOf(new Iterator<T>() {
-			final BiPredicate<Integer, String> useTerminator = terminator == null ? (i, t) -> false : terminator;
+			final BiPredicate<Integer, String> useTerminator = Optional.ofNullable(terminator).orElse((i, t) -> false);
 			String nextLine = null;
 			int readLines = 0;
-			boolean valid = true;
-
 			// skip lines if necessary
 			{
 				try {
-					if (offset > 0) {
-						for (int i = 0; i < offset; i++) {
-							if ((nextLine = reader.readLine()) == null) {
-								valid = false;
-								break;
-							}
+					for (int i = 0; i < offset; i++) {
+						if ((nextLine = reader.readLine()) == null) {
+							// Ensure nextLine is null if end of stream is reached
+							break;
 						}
 					}
 				} catch (IOException e) {
@@ -218,7 +211,7 @@ public class TextUtils {
 
 			@Override
 			public boolean hasNext() {
-				if (!valid || Thread.currentThread().isInterrupted()) {
+				if (Thread.currentThread().isInterrupted()) {
 					return false;
 				}
 				try {
@@ -231,7 +224,7 @@ public class TextUtils {
 
 			@Override
 			public T next() {
-				if (valid && (nextLine != null || hasNext())) {
+				if (nextLine != null || hasNext()) {
 					String line = nextLine;
 					nextLine = null;
 					return converter.apply(line);
@@ -239,9 +232,9 @@ public class TextUtils {
 					throw new NoSuchElementException();
 				}
 			}
+
 		});
 	}
-
 	/**
 	 * String lines from file, use for read text file line by line.
 	 *
