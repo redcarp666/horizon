@@ -10,7 +10,6 @@
     <name>horizon</name>
     <modules>
         <module>horizon-component</module>
-        <module>horizon-api-client</module>
         <module>horizon-core</module>
         <module>horizon-infrastructure</module>
         <module>horizon-security</module>
@@ -24,9 +23,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.7.18</spring-boot.version>
-        <spring-cloud.version>2021.0.9</spring-cloud.version>
+        <spring-cloud.version>2021.0.8</spring-cloud.version>
         <swagger.fox.version>2.9.2</swagger.fox.version>
         <druid.version>1.2.23</druid.version>
+        <netty.version>4.1.100.Final</netty.version>
         <commons.lang3.version>3.12.0</commons.lang3.version>
         <lombok.version>1.18.30</lombok.version>
         <hutool.version>5.8.26</hutool.version>

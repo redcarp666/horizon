@@ -5,10 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.redcarp</groupId>
-        <artifactId>horizon</artifactId>
+        <artifactId>horizon-component-cloud</artifactId>
         <version>1.1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>horizon-api-client</artifactId>
+
+    <artifactId>horizon-component-cloud-openfeign</artifactId>
 
     <dependencies>
 
@@ -32,5 +33,4 @@
         </dependency>
 
     </dependencies>
-
 </project>

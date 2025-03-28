@@ -20,5 +20,6 @@
         <module>horizon-component-druid</module>
         <module>horizon-component-xa</module>
         <module>horizon-component-mybatisplus</module>
+        <module>horizon-component-cloud</module>
     </modules>
 </project>
