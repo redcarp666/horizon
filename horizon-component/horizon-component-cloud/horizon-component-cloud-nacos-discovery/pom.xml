@@ -5,16 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.redcarp</groupId>
-        <artifactId>horizon-component</artifactId>
+        <artifactId>horizon-component-cloud</artifactId>
         <version>1.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>horizon-component-cloud</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>horizon-component-cloud-gateway</module>
-        <module>horizon-component-cloud-openfeign</module>
-        <module>horizon-component-cloud-nacos-discovery</module>
-    </modules>
+    <artifactId>horizon-component-cloud-nacos-discovery</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${nacos.discovery.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
