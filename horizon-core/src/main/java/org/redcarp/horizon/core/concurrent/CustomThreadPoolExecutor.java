@@ -1,6 +1,6 @@
 package org.redcarp.horizon.core.concurrent;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.concurrent.*;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.*;
  * @author ssh
  * @date 2025/3/13
  */
-@Slf4j
+@Log4j2
 public class CustomThreadPoolExecutor extends ThreadPoolExecutor {
 
 

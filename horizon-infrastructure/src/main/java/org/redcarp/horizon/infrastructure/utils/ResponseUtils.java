@@ -1,6 +1,7 @@
 package org.redcarp.horizon.infrastructure.utils;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 

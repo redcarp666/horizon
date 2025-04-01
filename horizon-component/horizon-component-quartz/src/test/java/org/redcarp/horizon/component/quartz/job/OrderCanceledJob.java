@@ -1,6 +1,6 @@
 package org.redcarp.horizon.component.quartz.job;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 
@@ -8,7 +8,7 @@ import org.quartz.JobExecutionContext;
  * @author redcarp
  * @date 2024/3/6
  */
-@Slf4j
+@Log4j2
 public class OrderCanceledJob implements Job {
 	@Override
 	public void execute(JobExecutionContext context) {

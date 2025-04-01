@@ -10,11 +10,14 @@ import org.redcarp.horizon.security.jwt.config.JwtKeyConfig;
 import org.redcarp.horizon.security.jwt.filter.BlacklistFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -22,7 +25,7 @@ import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
-import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
@@ -33,6 +36,7 @@ import org.springframework.security.web.SecurityFilterChain;
  */
 @EnableWebSecurity
 @EnableMethodSecurity
+@Configuration
 public class SecurityConfig {
 
 
@@ -56,10 +60,10 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.logout().disable().csrf().disable().sessionManagement((session) -> session.sessionCreationPolicy(
+		return http.logout(AbstractHttpConfigurer::disable).csrf(AbstractHttpConfigurer::disable).sessionManagement((session) -> session.sessionCreationPolicy(
 				SessionCreationPolicy.STATELESS)).addFilterAfter(new BlacklistFilter(),
-		                                                         BearerTokenAuthenticationFilter.class).oauth2ResourceServer().jwt();
-		return http.build();
+		                                                         BearerTokenAuthenticationFilter.class).oauth2ResourceServer(
+				t -> t.jwt(Customizer.withDefaults())).build();
 	}
 
 	@Bean

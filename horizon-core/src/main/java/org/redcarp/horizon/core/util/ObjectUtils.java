@@ -2,9 +2,6 @@ package org.redcarp.horizon.core.util;
 
 import cn.hutool.core.util.StrUtil;
 
-import java.lang.reflect.AccessibleObject;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Optional;
@@ -246,20 +243,6 @@ public class ObjectUtils {
 		return Optional.ofNullable(tryCast(o, cls));
 	}
 
-	public static void setAccessible(AccessibleObject object, boolean flag) {
-		if (System.getSecurityManager() == null) {
-			object.setAccessible(flag);
-		} else {
-			AccessController.doPrivileged((PrivilegedAction<Void>) () -> {
-				try {
-					object.setAccessible(flag);
-				} catch (SecurityException ex) {
-					// Noop!
-				}
-				return null;
-			});
-		}
-	}
 
 	public static <T> T tryCast(Object o, Class<T> cls) {
 		return cls.isInstance(o) ? cls.cast(o) : null;

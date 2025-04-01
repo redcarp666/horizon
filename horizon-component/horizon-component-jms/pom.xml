@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.redcarp</groupId>
         <artifactId>horizon-component</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>horizon-component-jms</artifactId>
 
@@ -16,10 +16,6 @@
             <artifactId>spring-boot-starter-artemis</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jta-atomikos</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.redcarp</groupId>
             <artifactId>horizon-core</artifactId>
         </dependency>
@@ -27,6 +23,10 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.jms</groupId>
+            <artifactId>jakarta.jms-api</artifactId>
         </dependency>
     </dependencies>
 

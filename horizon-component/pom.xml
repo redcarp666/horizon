@@ -4,14 +4,15 @@
     <parent>
         <groupId>org.redcarp</groupId>
         <artifactId>horizon</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
+
 
     <artifactId>horizon-component</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>horizon-component-swagger</module>
+        <module>horizon-component-springdoc</module>
         <module>horizon-component-jms</module>
         <module>horizon-component-mongodb</module>
         <module>horizon-component-redis</module>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.redcarp</groupId>
         <artifactId>horizon-component</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>horizon-component-quartz</artifactId>
 
@@ -16,8 +16,9 @@
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

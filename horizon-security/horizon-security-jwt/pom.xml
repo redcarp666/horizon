@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.redcarp</groupId>
         <artifactId>horizon-security</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>horizon-security-jwt</artifactId>

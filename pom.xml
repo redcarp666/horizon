@@ -4,7 +4,7 @@
 
     <groupId>org.redcarp</groupId>
     <artifactId>horizon</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>horizon</name>
@@ -17,30 +17,41 @@
 
 
     <properties>
-        <java.version>11</java.version>
+        <revision>2.0.0-SNAPSHOT</revision>
+        <java.version>21</java.version>
         <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.7.18</spring-boot.version>
-        <spring-cloud.version>2021.0.8</spring-cloud.version>
-        <swagger.fox.version>2.9.2</swagger.fox.version>
+        <spring-boot.version>3.4.4</spring-boot.version>
+        <spring-cloud.version>2024.0.1</spring-cloud.version>
         <druid.version>1.2.23</druid.version>
-        <netty.version>4.1.100.Final</netty.version>
-        <commons.lang3.version>3.12.0</commons.lang3.version>
-        <lombok.version>1.18.30</lombok.version>
-        <hutool.version>5.8.26</hutool.version>
-        <mybatis-plus.version>3.5.5</mybatis-plus.version>
-        <mysql.version>8.0.33</mysql.version>
-        <apache.poi.version>4.1.2</apache.poi.version>
-        <fastjson2.version>2.0.47</fastjson2.version>
-        <easyexcel.version>3.3.3</easyexcel.version>
-        <nacos.discovery.version>2021.0.6.2</nacos.discovery.version>
+        <netty.version>4.1.119.Final</netty.version>
+        <commons.lang3.version>3.17.0</commons.lang3.version>
+        <lombok.version>1.18.36</lombok.version>
+        <hutool.version>5.8.36</hutool.version>
+        <mybatis-plus.version>3.5.11</mybatis-plus.version>
+        <mysql.version>9.1.0</mysql.version>
+        <apache.poi.version>5.4.0</apache.poi.version>
+        <fastjson2.version>2.0.56</fastjson2.version>
+        <nacos.discovery.version>2023.0.3.2</nacos.discovery.version>
+        <springdoc.version>2.8.6</springdoc.version>
+        <flywaydb.version>10.20.1</flywaydb.version>
+        <jackson.version>2.18.3</jackson.version>
+        <junit.version>5.12.1</junit.version>
+        <logback.version>1.5.18</logback.version>
     </properties>
 
     <!-- 依赖声明 -->
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
             <!--horizon...-->
 
             <dependency>
@@ -55,7 +66,33 @@
             </dependency>
             <dependency>
                 <groupId>org.redcarp</groupId>
-                <artifactId>horizon-component-swagger</artifactId>
+                <artifactId>horizon-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-springdoc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-flyway</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-xa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-mybatisplus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-security-jwt</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -75,17 +112,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.discovery.version}</version>
+            </dependency>
 
             <!-- Swagger 依赖配置 -->
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.fox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.fox.version}</version>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+                <version>${springdoc.version}</version>
             </dependency>
             <!-- mybatis 依赖配置 -->
             <dependency>
@@ -95,12 +132,17 @@
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-extension</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
@@ -135,13 +177,8 @@
                 <version>${druid.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>easyexcel</artifactId>
-                <version>${easyexcel.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
 
@@ -151,6 +188,30 @@
                 <version>${apache.poi.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flywaydb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-mysql</artifactId>
+                <version>${flywaydb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -164,6 +225,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -212,6 +280,35 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.7.0</version>
+                <configuration>
+                    <!-- 生成一个“扁平化”的 POM 文件（flattened-pom.xml），仅保留构建和依赖解析所需的最小化信息，移除父 POM 中的配置继承和动态变量（如 ${revision}）。-->
+                    <!-- 避免IDE将 .flattened-pom.xml 自动识别为功能模块 -->
+                    <flattenedPomFilename>pom-xml-flattened</flattenedPomFilename>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <!-- enable flattening -->
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <!-- ensure proper cleanup -->
+                    <execution>
+                        <id>flatten.clean</id>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 

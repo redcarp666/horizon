@@ -1,6 +1,6 @@
 package org.redcarp.horizon.component.quartz.test;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2024/3/5
  */
 @Component
-@Slf4j
+@Log4j2
 public class ScheduledTest {
 
 	@Scheduled(cron = "*/3 * * * * ?") //每3秒

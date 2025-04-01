@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.redcarp</groupId>
         <artifactId>horizon-component-cloud</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>horizon-component-cloud-nacos-discovery</artifactId>
@@ -15,7 +15,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>${nacos.discovery.version}</version>
         </dependency>
     </dependencies>
 

@@ -6,11 +6,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.redcarp.horizon.infrastructure.annotation.Unique;
 import org.redcarp.horizon.infrastructure.exception.HorizonBusinessException;
-
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package org.redcarp.horizon.security.jwt;
 
 import cn.hutool.extra.spring.SpringUtil;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.redcarp.horizon.core.util.AssertionUtils;
 import org.redcarp.horizon.security.jwt.auth.LoginUsernamePassword;
 import org.redcarp.horizon.security.jwt.config.PasswordEncoderService;
@@ -18,7 +18,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
  * @author redcarp
  * @date 2024/2/24
  */
-@Slf4j
+@Log4j2
 public abstract class AbstractSecurityManager implements SecurityManager, UserDetailsService {
 
 	@Override

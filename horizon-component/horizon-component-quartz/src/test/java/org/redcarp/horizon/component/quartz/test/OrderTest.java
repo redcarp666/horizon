@@ -1,6 +1,6 @@
 package org.redcarp.horizon.component.quartz.test;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.Date;
  * @date 2024/3/6
  */
 @SpringBootTest
-@Slf4j
+@Log4j2
 public class OrderTest {
 
 	//建议将bean注入容器以复用

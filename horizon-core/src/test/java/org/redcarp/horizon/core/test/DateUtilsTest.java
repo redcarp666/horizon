@@ -1,6 +1,6 @@
 package org.redcarp.horizon.core.test;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.redcarp.horizon.core.util.DateUtils;
 
 import java.util.List;
