@@ -26,24 +26,24 @@ public class HorizonBaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@TableId(type = IdType.ASSIGN_ID)
-	@Schema(name = "ID")
+	@Schema(description = "ID")
 	private String id;
 
-	@Schema(name = "创建人")
+	@Schema(description = "创建人")
 	@TableField(fill = FieldFill.INSERT)
 	private String createBy;
 
-	@Schema(name = "创建时间")
+	@Schema(description = "创建时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN, timezone = "GMT+8")
 	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 
-	@Schema(name = "更新人")
+	@Schema(description = "更新人")
 	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private String updateBy;
 
-	@Schema(name = "更新时间")
+	@Schema(description = "更新时间")
 	@DateTimeFormat(pattern = DatePattern.NORM_DATETIME_PATTERN)
 	@JsonFormat(pattern = DatePattern.NORM_DATETIME_PATTERN, timezone = "GMT+8")
 	@TableField(fill = FieldFill.INSERT_UPDATE)
