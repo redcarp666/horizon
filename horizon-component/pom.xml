@@ -22,5 +22,6 @@
         <module>horizon-component-xa</module>
         <module>horizon-component-mybatisplus</module>
         <module>horizon-component-cloud</module>
+        <module>horizon-component-ai</module>
     </modules>
 </project>

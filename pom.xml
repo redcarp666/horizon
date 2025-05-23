@@ -23,7 +23,7 @@
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>3.4.4</spring-boot.version>
+        <spring-boot.version>3.5.0</spring-boot.version>
         <spring-cloud.version>2024.0.1</spring-cloud.version>
         <druid.version>1.2.23</druid.version>
         <netty.version>4.1.119.Final</netty.version>
@@ -85,6 +85,11 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.redcarp</groupId>
+                <artifactId>horizon-component-ai</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.redcarp</groupId>
                 <artifactId>horizon-component-mybatisplus</artifactId>
